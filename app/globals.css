@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
+section {
+  background: var(--background);
+  color: var(--foreground);
+}
+section {
+  background: #fff;
+  color: #0033a0;
+}
+@import "tailwindcss";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* white */
+  --foreground: #000000; /* black text */
+  /* Primary brand colors (only allowed palette) */
+  --yellow: #ffc300;
+  --yellow-dark: #ffb000;
+  --red: #ed1c24;
+  --red-dark: #c8102e;
+  --blue: #0033a0;
+  --blue-light: #2d5bd1;
+  /* Map legacy brand tokens to allowed colors */
+  --brand-50: #fff9e5;
+  --brand-100: #fff3cc;
+  --brand-200: #ffe799;
+  --brand-300: #ffda66;
+  --brand-400: #ffce33;
+  --brand-500: var(--yellow);
+  --brand-600: var(--yellow-dark);
+  --brand-700: var(--red);
+  --brand-800: var(--red-dark);
+  --brand-900: var(--blue);
+  --accent-red: var(--red);
+  --accent-blue: var(--blue);
+  --border: var(--blue-light);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed @theme inline for compatibility; using raw CSS variables above. */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Dark mode removed – enforcing strict palette */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* Utility button styles aligning with Shell color scheme */
+.btn-primary {
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent-red);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: background .18s ease, box-shadow .18s ease;
+}
+.btn-primary:hover { background: var(--red-dark); }
+.btn-primary:active { background: var(--red-dark); filter: brightness(.9); }
+.btn-primary:focus { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.btn-secondary {
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  background: var(--brand-500);
+  color: #1a1a1a;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: background .18s ease, box-shadow .18s ease;
+}
+.btn-secondary:hover { background: var(--brand-400); }
+.btn-secondary:active { background: var(--brand-600); }
+.btn-secondary:focus { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.badge-accent { background: var(--red); color: #fff; }
+
+.ring-accent-yellow { box-shadow: 0 0 0 3px var(--yellow); }
+
+.text-balance { text-wrap: balance; }

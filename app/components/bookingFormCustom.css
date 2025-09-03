@@ -1,0 +1,240 @@
+/* Calendar mobile responsiveness */
+@media (max-width: 400px) {
+  .custom-calendar {
+    font-size: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .react-calendar__navigation {
+    font-size: 0.8rem !important;
+  }
+  
+  .react-calendar__navigation button {
+    padding: 0.25rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .react-calendar__tile {
+    padding: 0.25rem !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .react-calendar__month-view__weekdays {
+    font-size: 0.6rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .custom-calendar {
+    font-size: 0.7rem !important;
+  }
+  
+  .react-calendar__navigation button {
+    padding: 0.125rem !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .react-calendar__tile {
+    padding: 0.125rem !important;
+    font-size: 0.65rem !important;
+    min-height: 1.5rem !important;
+  }
+  
+  .react-calendar__month-view__weekdays {
+    font-size: 0.55rem !important;
+  }
+}
+
+.booking-form-container select,
+.booking-form-container select option {
+  background: #222 !important;
+  color: #f3f3f3 !important;
+  border: 1.5px solid #333 !important;
+}
+.booking-form-container select:focus {
+  border-color: #148bff !important;
+  box-shadow: 0 0 0 2px #148bff33;
+}
+
+/* Remove white box in calendar navigation */
+.react-calendar__navigation button {
+  background: #181818 !important;
+  color: #f3f3f3 !important;
+  border: none !important;
+}
+.react-calendar__tile:hover {
+  background: #148bff !important;
+  color: #fff !important;
+  border-radius: 0.75rem;
+}
+.booking-form-container select,
+.booking-form-container select option {
+  background: #222 !important;
+  color: #f3f3f3 !important;
+}
+.booking-form-container select:focus {
+  border-color: #148bff !important;
+  box-shadow: 0 0 0 2px #148bff33;
+}
+select, select option {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+  background: #fff;
+}
+select option:disabled {
+  color: #bbb;
+}
+.react-time-picker__clock {
+  background: #fff !important;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(16,185,129,0.08);
+  border: 2px solid #16a34a !important;
+  padding: 1rem !important;
+}
+.react-time-picker__clock-face {
+  background: #fff !important;
+  border-radius: 1rem;
+}
+.react-time-picker__clock-face__number {
+  color: #171717 !important;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
+  text-shadow: 0 1px 2px #fff, 0 0 2px #16a34a;
+}
+.react-time-picker__clock-face__hand {
+  background: #16a34a !important;
+  border-radius: 2px !important;
+  height: 3px !important;
+}
+.react-time-picker__clock {
+  background: #fff !important;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(16,185,129,0.08);
+}
+.react-time-picker__clock-face {
+  background: #fff !important;
+}
+.react-time-picker__clock .react-time-picker__clock-face__number {
+  color: #171717 !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.react-time-picker__clock .react-time-picker__clock-face__hand {
+  background: #16a34a !important;
+}
+/* Booking form container */
+/* Shell color scheme booking form */
+/* Shell Car Wash inspired booking form */
+.booking-form-container {
+  background: #fff;
+  color: #0033a0;
+  border-radius: 1.5rem;
+  border: 4px solid #ffc300;
+  box-shadow: 0 4px 24px #0033a0;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+/* Inputs, selects, calendar, etc. */
+.booking-form-container input,
+.booking-form-container select,
+.booking-form-container textarea {
+  background: #fff;
+  color: #0033a0;
+  border: 2px solid #0033a0;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px #ffc30033;
+}
+.booking-form-container input::placeholder,
+.booking-form-container textarea::placeholder {
+  color: #ffc300;
+  font-weight: 500;
+}
+.booking-form-container label {
+  color: #ed1c24;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+.booking-form-container select option {
+  background: #fff;
+  color: #0033a0;
+  font-weight: 600;
+}
+.booking-form-container select option:disabled {
+  color: #ffc300;
+}
+
+/* Calendar styling override */
+.custom-calendar {
+  border-radius: 1rem;
+  border: 2px solid #0033a0;
+  background: #fff;
+  box-shadow: 0 4px 24px #ffc30055;
+  font-family: inherit;
+  color: #ed1c24;
+  margin-bottom: 1rem;
+}
+.react-calendar__tile--active {
+  background: #ffc300 !important;
+  color: #ed1c24 !important;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ed1c2455;
+}
+.react-calendar__tile--sunday {
+  color: #ed1c24 !important;
+}
+/* Button styles */
+.booking-form-container button[type="submit"],
+.booking-form-container .btn-primary {
+  background: #ffc300;
+  color: #0033a0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px #ed1c2433;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.booking-form-container button[type="submit"]:hover,
+.booking-form-container .btn-primary:hover {
+  background: #ed1c24;
+  color: #fff;
+}
+.booking-form-container button[type="submit"]:active,
+.booking-form-container .btn-primary:active {
+  background: #0033a0;
+  color: #fff;
+}
+.react-calendar__tile--active {
+  background: #148bff !important;
+  color: #fff !important;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(20,139,255,0.15);
+}
+.react-calendar__tile--sunday {
+  color: #e53e3e !important;
+}
+.custom-timepicker {
+  border-radius: 1rem;
+  border: 2px solid #16a34a;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(16,185,129,0.08);
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  color: #171717;
+  font-size: 1.1rem;
+}
