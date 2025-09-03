@@ -104,8 +104,9 @@ export const AuthForm: React.FC = () => {
         if (error) throw error;
         setSuccess("Sign in successful!");
       }
-    } catch (err: any) {
-      setError(err.message || "Authentication failed.");
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Authentication failed.';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -246,7 +247,7 @@ export const AuthForm: React.FC = () => {
                   textDecoration: 'underline'
                 }}
               >
-                Don't have an account? Sign Up
+                Don&apos;t have an account? Sign Up
               </button>
             ) : (
               <button 

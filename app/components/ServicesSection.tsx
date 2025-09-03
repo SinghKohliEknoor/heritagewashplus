@@ -2,6 +2,15 @@
 import React from "react";
 import useSWR from "swr";
 
+interface ServiceTier {
+  id: string;
+  name: string;
+  description: string;
+  price_sedan: number;
+  price_suv: number;
+  features: string[];
+}
+
 const currency = (n: number) => `$${n.toFixed(2)}`;
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
@@ -19,7 +28,7 @@ const ServicesSection: React.FC = () => {
           <p className="text-foreground/70 text-lg" style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}>Transparent pricing. Premium products. Tailored care for sedans, SUVs & trucks.</p>
         </div>
         <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-3">
-          {data.map((tier: any) => (
+          {data.map((tier: ServiceTier) => (
               <div
                 key={tier.id}
                 style={{

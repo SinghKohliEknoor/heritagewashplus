@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import Image from "next/image";
 import useSWR from 'swr';
 
 export const GalleryCarousel: React.FC = () => {
@@ -61,10 +61,12 @@ export const GalleryCarousel: React.FC = () => {
                   <span>Image not available</span>
                 </div>
               ) : (
-                <img
+                <Image
                   src={before}
                   alt="Before detailing"
-                  className="w-[380px] h-[260px] object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={380}
+                  height={260}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                   style={{ boxShadow: "0 8px 32px rgba(0,51,160,0.12)" }}
                   onError={() => handleImageError(before)}
                 />
@@ -79,10 +81,12 @@ export const GalleryCarousel: React.FC = () => {
                   <span>Image not available</span>
                 </div>
               ) : (
-                <img
+                <Image
                   src={after}
                   alt="After detailing"
-                  className="w-[380px] h-[260px] object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={380}
+                  height={260}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                   style={{ boxShadow: "0 8px 32px rgba(255,195,0,0.12)" }}
                   onError={() => handleImageError(after)}
                 />
@@ -101,9 +105,11 @@ export const GalleryCarousel: React.FC = () => {
                   <span>Image not available</span>
                 </div>
               ) : (
-                <img
+                <Image
                   src={before}
                   alt="Before detailing"
+                  width={350}
+                  height={200}
                   style={{ width: '100%', height: '200px', objectFit: 'cover', transition: 'transform 0.3s' }}
                   onTouchStart={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.02)'; }}
                   onTouchEnd={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1)'; }}
@@ -120,9 +126,11 @@ export const GalleryCarousel: React.FC = () => {
                   <span>Image not available</span>
                 </div>
               ) : (
-                <img
+                <Image
                   src={after}
                   alt="After detailing"
+                  width={350}
+                  height={200}
                   style={{ width: '100%', height: '200px', objectFit: 'cover', transition: 'transform 0.3s' }}
                   onTouchStart={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.02)'; }}
                   onTouchEnd={e => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1)'; }}
@@ -142,7 +150,14 @@ export const GalleryCarousel: React.FC = () => {
       {modalImg && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-blue/80 backdrop-blur-sm" style={{ background: 'rgba(0,51,160,0.85)' }} onClick={() => setModalImg(null)}>
           <div className="relative max-w-3xl w-full flex flex-col items-center px-4">
-            <img src={modalImg} alt={modalAlt} className="rounded-2xl shadow-2xl max-h-[80vh] object-contain border-4 border-yellow" style={{ borderColor: '#ffc300', maxWidth: '90vw' }} />
+            <Image 
+              src={modalImg} 
+              alt={modalAlt} 
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-2xl max-h-[80vh] object-contain border-4 border-yellow" 
+              style={{ borderColor: '#ffc300', maxWidth: '90vw' }} 
+            />
             <button
               className="absolute top-2 right-2 text-white rounded-full px-4 py-2 text-lg font-bold"
               style={{ background: '#ed1c24', border: 'none', cursor: 'pointer' }}

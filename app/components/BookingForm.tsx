@@ -54,8 +54,6 @@ function TimeSelect({ selectedDate, value, onChange }: TimeSelectProps) {
 
 import dynamic from "next/dynamic";
 const Calendar = dynamic(() => import("react-calendar"), { ssr: false });
-import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import 'react-calendar/dist/Calendar.css';
 import './bookingFormCustom.css';
 
@@ -273,7 +271,7 @@ export const BookingForm: React.FC = () => {
       <div id="booking-container" style={{ maxWidth: '48rem', margin: '0 auto', padding: '0 1rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h2 style={{ color: '#ffc300', fontWeight: 900, fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', letterSpacing: '1px', marginBottom: '1rem', textShadow: '0 2px 8px #0002' }}>Book a Detailing Appointment</h2>
-          <p style={{ color: '#fff', fontSize: 'clamp(1rem, 3vw, 1.1rem)', maxWidth: '32rem', margin: '0 auto' }}>Reserve your preferred detailing package. We'll confirm availability shortly.</p>
+          <p style={{ color: '#fff', fontSize: 'clamp(1rem, 3vw, 1.1rem)', maxWidth: '32rem', margin: '0 auto' }}>Reserve your preferred detailing package. We&apos;ll confirm availability shortly.</p>
         </div>
         <form
           id="booking-form"
@@ -298,7 +296,7 @@ export const BookingForm: React.FC = () => {
           )}
           {submitted && (
             <div style={{ borderRadius: '1rem', background: '#ffc30022', border: '2px solid #ffc300', color: '#0033a0', padding: '0.75rem 1.5rem', fontWeight: 700, fontSize: '1rem' }}>
-              Request received! We'll be in touch.
+              Request received! We&apos;ll be in touch.
             </div>
           )}
           <div id="booking-grid" style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
@@ -406,7 +404,7 @@ export const BookingForm: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <p style={{ fontSize: '0.75rem', color: '#0033a0', marginTop: '0.5rem' }}>Business hours 08:00–18:00. We'll confirm or suggest alternatives if unavailable.</p>
+              <p style={{ fontSize: '0.75rem', color: '#0033a0', marginTop: '0.5rem' }}>Business hours 08:00–18:00. We&apos;ll confirm or suggest alternatives if unavailable.</p>
             </fieldset>
             <div id="detailing-type-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', gridColumn: 'span 2' }}>
               <label htmlFor="detailType" className="booking-label" style={{ fontWeight: 700, color: '#0033a0' }}>Detailing Type *</label>
@@ -454,7 +452,7 @@ export const BookingForm: React.FC = () => {
             >
               Book Now
             </button>
-            <p style={{ fontSize: '0.85rem', color: '#0033a0' }}>* All fields required. We'll confirm schedule & pricing via phone or email.</p>
+            <p style={{ fontSize: '0.85rem', color: '#0033a0' }}>* All fields required. We&apos;ll confirm schedule & pricing via phone or email.</p>
           </div>
         </form>
       </div>

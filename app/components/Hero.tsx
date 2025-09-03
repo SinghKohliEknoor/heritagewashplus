@@ -1,13 +1,7 @@
 "use client";
 import React from "react";
 
-interface HeroProps {
-  backgroundUrl?: string;
-}
-
-export const Hero: React.FC<HeroProps> = ({
-  backgroundUrl = "/hero-bg.svg",
-}) => {
+export const Hero: React.FC = () => {
   return (
     <header
       className="relative min-h-[88vh] w-full flex items-center justify-center text-center overflow-hidden"
@@ -45,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({
             lineHeight: '1.6',
           }}
         >
-          Professional eco‑friendly car detailing. Revive your vehicle's heritage shine with premium care packages for every need.
+          Professional eco‑friendly car detailing. Revive your vehicle&apos;s heritage shine with premium care packages for every need.
         </p>
         <div
           className="flex flex-col sm:flex-row justify-center gap-4"
