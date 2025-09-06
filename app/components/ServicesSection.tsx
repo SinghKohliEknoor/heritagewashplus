@@ -47,8 +47,18 @@ const ServicesSection: React.FC = () => {
                   maxWidth: '420px',
                   marginLeft: 'auto',
                   marginRight: 'auto',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  cursor: 'pointer'
                 }}
                 className="group"
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px #0033a0';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 24px #0033a0';
+                }}
               >
                 {tier.name === 'Basic Detail' && (
                   <span style={{
@@ -88,21 +98,32 @@ const ServicesSection: React.FC = () => {
                   ))}
                 </ul>
                 <div>
-                  <button style={{
-                    width: '100%',
-                    background: '#ed1c24',
-                    color: '#fff',
-                    fontWeight: 700,
-                    fontSize: 'clamp(1rem, 3vw, 1.1rem)',
-                    border: 'none',
-                    borderRadius: '9999px',
-                    padding: '0.75rem 2rem',
-                    boxShadow: '0 2px 8px #0033a055',
-                    marginTop: '1rem',
-                    cursor: 'pointer',
-                    transition: 'background 0.18s, color 0.18s',
-                  }}>
-                    Book {tier.name.split(" ")[0]}
+                  <button 
+                    style={{
+                      width: '100%',
+                      background: '#ed1c24',
+                      color: '#fff',
+                      fontWeight: 700,
+                      fontSize: 'clamp(1rem, 3vw, 1.1rem)',
+                      border: 'none',
+                      borderRadius: '9999px',
+                      padding: '0.75rem 2rem',
+                      boxShadow: '0 2px 8px #0033a055',
+                      marginTop: '1rem',
+                      cursor: 'pointer',
+                      transition: 'background 0.18s, color 0.18s',
+                    }}
+                    onClick={() => {
+                      window.location.href = '/#booking-section';
+                    }}
+                    onMouseOver={(e) => {
+                      (e.currentTarget as HTMLButtonElement).style.background = '#c41620';
+                    }}
+                    onMouseOut={(e) => {
+                      (e.currentTarget as HTMLButtonElement).style.background = '#ed1c24';
+                    }}
+                  >
+                    Book Now
                   </button>
                 </div>
               </div>

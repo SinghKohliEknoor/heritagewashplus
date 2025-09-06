@@ -3,6 +3,7 @@ import Hero from "@/app/components/Hero";
 import GalleryCarousel from "@/app/components/GalleryCarousel";
 import BookingForm from "@/app/components/BookingForm";
 import ServicesSection from "@/app/components/ServicesSection";
+import AutomaticsSection from "@/app/components/AutomaticsSection";
 import React from "react";
 
 
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <GalleryCarousel />
       <ServicesSection />
+      <AutomaticsSection />
       <BookingForm />
       <footer id="contact" className="border-t border-border/50 py-10 text-center text-sm text-foreground/60">
         © {new Date().getFullYear()} Heritage Wash Plus. All rights reserved.
